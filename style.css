@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+  font-family: Arvo;
+  color: #111;
+}
+
+.content {
+  border: 1em solid #fff;
+  height: auto !important;
+  background: white;
+  padding: 0 1em;
+  width: 960px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #62BFAD;
+  text-align: center;
+  font-size: 15vw;
+  margin: 0;
+  text-shadow: white 2px 0 0, #FFBFAD 6px 0 0;
+  line-height: 1;
+}
+
+h2 {
+  text-align: center;
+  color: #444;
+  margin: 0;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 2em 0;
+  padding: 0;
+}
+
+.row {
+  overflow: hidden;
+  padding: .5em;
+}
+.poster{
+  max-height: 90vh;
+  margin: 0 auto;
+  padding: 1em;
+  display: block;
+  background: #f9f7e8;
+  float: right;
+  box-shadow: 1px 1px 5px 0 rgba(0,0,0,.3);
+}
+
+.contributors {
+  padding: 0;
+  margin: 4em 0;
+}
+
+.contributors li {
+  display: inline-block;
+  margin: .5em 1em .5em .5em;
+}
+
+.contributors li:nth-child(3n+1) {
+  color: #62BFAD;
+}
+
+.contributors li:nth-child(5n+2) {
+  color: #FF4136;
+}
+
+.contributors li:nth-child(11n+1) {
+  color: #aaa;
+}
+
+.coordinators {
+  font-size: .8em;
+  text-align: center;
+}
+
+.social {
+  padding: 0;
+  text-align: center;
+}
+
+.social li {
+  width: 30px;
+  display: inline-block;
+  margin: 1em;
+}
