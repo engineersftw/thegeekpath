@@ -7,9 +7,9 @@
 .content {
   border: 1em solid #fff;
   height: auto !important;
-  background: white;
+  background: #f9f7e8;
   padding: 0 1em;
-  width: 960px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -19,7 +19,7 @@ h1 {
   color: #62BFAD;
   text-align: center;
   font-size: 15vw;
-  margin: 0;
+  margin: .2em 0 0 0;
   text-shadow: white 2px 0 0, #FFBFAD 6px 0 0;
   line-height: 1;
 }
