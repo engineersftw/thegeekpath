@@ -5,9 +5,7 @@
 }
 
 .content {
-  border: 1em solid #fff;
   height: auto !important;
-  /*background: #f9f7e8;*/
   padding: 0 1em;
   width: 100%;
   margin: 0 auto;
@@ -92,4 +90,15 @@ hr {
   width: 30px;
   display: inline-block;
   margin: 1em;
+}
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 25vw;
+    text-shadow: white 1px 0 0, #FFBFAD 4px 0 0;
+  }
+
+  .poster {
+    max-width: 100%;
+  }
 }
