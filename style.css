@@ -1,22 +1,26 @@
 * {
   box-sizing: border-box;
+}
+
+body {
   font-family: Arvo;
   color: #666;
 }
 
+a {
+  color: #666;
+}
+
 .content {
-  height: auto !important;
   padding: 0 1em;
-  width: 100%;
-  margin: 0 auto;
+  text-align: center;
 }
 
 h1 {
   text-transform: uppercase;
   font-weight: normal;
   color: #62BFAD;
-  text-align: center;
-  font-size: 15vw;
+  font-size: 25vw;
   margin: .2em 0 0 0;
   -webkit-text-stroke: 2px #fff;
   text-shadow: #FFBFAD 6px 0 0;
@@ -24,41 +28,35 @@ h1 {
 }
 
 h2 {
-  text-align: center;
   margin: 0;
 }
 
 hr {
   display: block;
-  height: 1px;
+  height: 0px;
   border: 0;
-  border-top: 1px solid #eee;
+  border-top: 2px solid #666;
   margin: 2em 0;
   padding: 0;
 }
 
 .poster{
-  max-height: 90vh;
-  margin: 2em auto;
-  padding: 1em;
-  display: block;
+  max-width: 100%;
+  margin: 2em 0 0;
   background: #f9f7e8;
-  box-shadow: 1px 1px 5px 0 rgba(0,0,0,.3);
+  box-shadow: 0px 5px 20px rgba(0,0,0,.3);
 }
 
 .download {
-  background: #f9f7e8;
-  padding: 1em 2em;
+  padding: 1em 4em;
   text-decoration: none;
-  display: block;
+  display: inline-block;
   margin: 2em auto;
-  width: 200px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  border: 2px solid #666;
 }
 
 .download:hover, .download:active {
-  background: #62BFAD;
+  background-color: #666;
   color: #fff;
 }
 
@@ -84,18 +82,30 @@ hr {
 }
 
 .social li {
-  width: 30px;
-  display: inline-block;
-  margin: 1em;
+  display: inline;
 }
 
-@media only screen and (max-width: 600px) {
-  h1 {
-    font-size: 25vw;
-    text-shadow: white 1px 0 0, #FFBFAD 4px 0 0;
-  }
+.social li a{
+  vertical-align: middle;
+  padding: 1em;
+  text-decoration: none;
+}
 
-  .poster {
-    max-width: 100%;
+.social li a:hover,
+.social li a:hover svg{
+  fill: #62BFAD;
+  color: #62BFAD;
+}
+
+.social svg{
+  vertical-align: middle;
+  width: 30px;
+  fill: currentColor;
+  width: 32px;
+}
+
+@media only screen and (min-width: 600px) {
+  h1 {
+    font-size: 15vw;
   }
 }
