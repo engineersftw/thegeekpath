@@ -13,12 +13,13 @@
 
 h1 {
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: normal;
   color: #62BFAD;
   text-align: center;
   font-size: 15vw;
   margin: .2em 0 0 0;
-  text-shadow: white 2px 0 0, #FFBFAD 6px 0 0;
+  -webkit-text-stroke: 2px #fff;
+  text-shadow: #FFBFAD 6px 0 0;
   line-height: 1;
 }
 
