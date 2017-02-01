@@ -2,17 +2,17 @@
 
 > Geek manifesto as codified by the grassroots community of engineers, designers and makers of Singapore.
 
-![](poster.png)
+![](artwork/thegeekpath.png)
 
 ## Color scheme
 
-- background: `F9F7E8`
-- green: `62BFAD`
-- red: `FF4136`
+- Background: `#F9F7E8`
+- Green: `#62BFAD`
+- Red: `#FF4136`
 
 ## Fonts
 
-Arvo
+[Arvo](https://fonts.google.com/specimen/Arvo)
 
 ## License
 
