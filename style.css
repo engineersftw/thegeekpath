@@ -70,6 +70,10 @@ hr {
   margin: .5em 1em .5em .5em;
 }
 
+.contributors a:link, .contributors a:visited, .contributors a:hover, .contributors a:active {
+  text-decoration: underline;
+}
+
 .license {
   font-size: .8em;
   text-align: center;
