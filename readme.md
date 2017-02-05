@@ -4,6 +4,12 @@
 
 ![](artwork/thegeekpath.png)
 
+Formats available:
+
+- [PNG](artwork/thegeekpath.png)
+- [SVG](artwork/thegeekpath.svg) ([unoptimized](artwork/thegeekpath.raw.png) version)
+- [PDF](artwork/thegeekpath.pdf)
+
 ## Color scheme
 
 - Background: `#F9F7E8`
@@ -13,6 +19,11 @@
 ## Fonts
 
 [Arvo](https://fonts.google.com/specimen/Arvo)
+
+## Tools
+
+- [Affinity Designer](https://affinity.serif.com/en-us/designer/)
+- [SVGOMG](https://jakearchibald.github.io/svgomg/)
 
 ## License
 
