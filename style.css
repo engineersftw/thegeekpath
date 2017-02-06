@@ -1,19 +1,37 @@
-* {
+*{
   box-sizing: border-box;
 }
 
 body {
-  font-family: Arvo;
-  color: #666;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: #000;
+  text-align: center;
+  cursor: default;
+  padding: 0;
+  margin: 0;
+}
+
+p{
+  line-height: 1.75em;
 }
 
 a {
-  color: #666;
+  color: #000;
+  text-decoration: underline;
 }
 
-.content {
+a:hover{
+  color: #FF4136;
+}
+
+header, main, footer{
   padding: 0 1em;
-  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+h1, h2{
+  font-family: Arvo, sans-serif;
 }
 
 h1 {
@@ -21,23 +39,16 @@ h1 {
   font-weight: normal;
   color: #62BFAD;
   font-size: 25vw;
-  margin: .2em 0 0 0;
+  margin: .2em 0 0;
   -webkit-text-stroke: 2px #fff;
   text-shadow: #FFBFAD 6px 0 0;
-  line-height: 1;
+  line-height: .9;
+  word-spacing: 999em; /* Break every word */
 }
 
-h2 {
+p.description {
   margin: 0;
-}
-
-hr {
-  display: block;
-  height: 0px;
-  border: 0;
-  border-top: 2px solid #666;
-  margin: 2em 0;
-  padding: 0;
+  font-size: 1.4em;
 }
 
 .poster{
@@ -48,21 +59,52 @@ hr {
 }
 
 .download {
+  font-weight: bold;
   padding: 1em 4em;
   text-decoration: none;
   display: inline-block;
-  margin: 2em auto;
-  border: 2px solid #666;
+  margin: 1em auto 0;
+  border: 2px solid #000;
 }
 
-.download:hover, .download:active {
-  background-color: #666;
+.download:hover,
+.download:active{
+  background-color: #000;
   color: #fff;
+}
+
+.social a{
+  display: inline-block;
+  vertical-align: middle;
+  padding: 1em;
+  text-decoration: none;
+}
+
+.social a:hover,
+.social a:hover svg{
+  fill: currentColor;
+}
+
+.social svg{
+  fill: currentColor;
+  vertical-align: middle;
+  width: 30px;
+}
+
+.special-block{
+  border-top: 3px solid #FF4136;
+  border-bottom: 3px solid #FF4136;
+  padding: 1em;
+  margin: 3em 0;
+}
+
+.special-block a{
+  text-decoration: none;
 }
 
 .contributors {
   padding: 0;
-  margin: 4em 0;
+  margin: 0;
 }
 
 .contributors li {
@@ -70,46 +112,8 @@ hr {
   margin: .5em 1em .5em .5em;
 }
 
-.contributors a:link, .contributors a:visited, .contributors a:hover, .contributors a:active {
-  text-decoration: underline;
-}
-
-.license {
-  font-size: .8em;
-  text-align: center;
-  margin: 4em 0;
-}
-
-.social {
-  padding: 0;
-  text-align: center;
-}
-
-.social li {
-  display: inline;
-}
-
-.social li a{
-  vertical-align: middle;
-  padding: 1em;
-  text-decoration: none;
-}
-
-.social li a:hover,
-.social li a:hover svg{
-  fill: #62BFAD;
-  color: #62BFAD;
-}
-
-.social svg{
-  vertical-align: middle;
-  width: 30px;
-  fill: currentColor;
-  width: 32px;
-}
-
 @media only screen and (min-width: 600px) {
   h1 {
-    font-size: 14vw;
+    font-size: 25vh;
   }
 }
