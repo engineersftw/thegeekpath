@@ -68,6 +68,10 @@ p.description {
 
 .text {
   background: #f9f7e8;
+  padding: .5em 1em;
+  text-align: left;
+  max-width: 30em;
+  margin: auto;
 }
 
 .download {
