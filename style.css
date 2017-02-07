@@ -50,6 +50,10 @@ details {
   margin: 1em 0;
 }
 
+summary {
+  padding: 1em 0;
+}
+
 p.description {
   margin: 0;
   font-size: 1.4em;
