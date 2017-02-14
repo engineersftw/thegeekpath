@@ -53,9 +53,15 @@ var renderWallpaper = function(width, height){
     // img.width = canvas.width / canvas.height * img.height;
     // img.height = canvas.height;
     var max = Math.min(canvas.width, canvas.height);
-    var h = canvas.height - padding*2;
-    var w = img.width/img.height*(h);
-    ctx.drawImage(img, (canvas.width-w)/2 - padding, padding, w, h);
+    if (canvas.width/canvas.height >= img.width/img.height){
+      var h = canvas.height - padding*2;
+      var w = img.width/img.height*(h);
+      ctx.drawImage(img, (canvas.width-w)/2 - padding, padding, w, h);
+    } else {
+      var w = canvas.width - padding*2;
+      var h = img.height/img.width*(w);
+      ctx.drawImage(img, padding, (canvas.height-h)/2 - padding, w, h);
+    }
 
     link.href = canvas.toDataURL();
     link.setAttribute('data-dimensions', width + '×' + height + 'px');
