@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>The Geek Path Wallpaper</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arvo">
+<link rel="stylesheet" href="../style.css">
+<style>
+header h1{
+  font-size: 5em;
+  word-spacing: normal;
+}
+
+#download-canvas{
+  display: block;
+  position: relative;
+  padding: 0 0 20px;
+}
+#download-canvas:after{
+  content: attr(data-dimensions);
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  color: #fff;
+  background-color: rgba(0,0,0,.3);
+  border-radius: 3px;
+  padding: .5em 1em;
+}
+#download-canvas:hover{
+  opacity: .75;
+}
+</style>
+
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="../artwork/favicon.png" type="image/png">
+
+<header>
+  <h1>The Geek Path Wallpaper</h1>
+  <p class="description">A manifesto wallpaper for your device</p>
+</header>
+
+<main>
+  <a id="download-canvas" download="wallpaper"><canvas id="canvas" class="poster"></canvas></a>
+
+  <p>This wallpaper is auto-generated based on your current device's screen resolution. Load this page to download the wallpaper specialised for your device.</p>
+</main>
+
+<script>
+var renderWallpaper = function(width, height){
+  var dpr = window.devicePixelRatio || 1;
+  var padding = 40;
+
+  var canvas = document.getElementById('canvas');
+  var link = document.getElementById('download-canvas');
+
+  canvas.width = width * dpr;
+  canvas.style.width = width + 'px';
+  canvas.height = height * dpr;
+
+  var ctx = canvas.getContext('2d');
+  ctx.fillStyle = '#F9F7E8';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  var img = new Image();
+  img.onload = function() {
+    // img.width = canvas.width / canvas.height * img.height;
+    // img.height = canvas.height;
+    var max = Math.min(canvas.width, canvas.height);
+    var h = canvas.height - padding*2;
+    var w = img.width/img.height*(h);
+    ctx.drawImage(img, (canvas.width-w)/2 - padding, padding, w, h);
+
+    link.href = canvas.toDataURL();
+    link.setAttribute('data-dimensions', width + ' × ' + height + ' px');
+  }
+  img.src = '../artwork/thegeekpath.svg';
+}
+
+renderWallpaper(screen.width, screen.height);
+</script>
