@@ -10,23 +10,8 @@ header h1{
   word-spacing: normal;
 }
 
-#download-canvas{
-  display: block;
-  position: relative;
-  padding: 0 0 20px;
-}
 #download-canvas:after{
-  content: attr(data-dimensions);
-  position: absolute;
-  top: 40px;
-  right: 10px;
-  color: #fff;
-  background-color: rgba(0,0,0,.3);
-  border-radius: 3px;
-  padding: .5em 1em;
-}
-#download-canvas:hover{
-  opacity: .75;
+  content: ' (' attr(data-dimensions) ')';
 }
 </style>
 
@@ -39,7 +24,10 @@ header h1{
 </header>
 
 <main>
-  <a id="download-canvas" download="wallpaper"><canvas id="canvas" class="poster"></canvas></a>
+  <canvas id="canvas" class="poster"></canvas>
+  <p>
+    <a class="download" id="download-canvas" download="wallpaper" href="#">Download wallpaper</a>
+  </p>
 
   <p>This wallpaper is auto-generated based on your current device's screen resolution. Load this page to download the wallpaper specialised for your device.</p>
 </main>
@@ -70,7 +58,7 @@ var renderWallpaper = function(width, height){
     ctx.drawImage(img, (canvas.width-w)/2 - padding, padding, w, h);
 
     link.href = canvas.toDataURL();
-    link.setAttribute('data-dimensions', width + ' × ' + height + ' px');
+    link.setAttribute('data-dimensions', width + '×' + height + 'px');
   }
   img.src = '../artwork/thegeekpath.svg';
 }
