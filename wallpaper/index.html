@@ -5,6 +5,12 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arvo">
 <link rel="stylesheet" href="../style.css">
 <style>
+#canvas{
+  visibility: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
 }
 
 #download-canvas:after{
@@ -21,7 +27,8 @@
 </header>
 
 <main>
-  <canvas id="canvas" class="poster"></canvas>
+  <canvas id="canvas"></canvas>
+  <img id="canvas-output" class="poster">
   <p>
     <a class="download" id="download-canvas" download="wallpaper" href="#">Download wallpaper</a>
   </p>
@@ -36,10 +43,10 @@ var renderWallpaper = function(width, height){
   var padding = 40;
 
   var canvas = document.getElementById('canvas');
+  var canvasOutput = document.getElementById('canvas-output');
   var link = document.getElementById('download-canvas');
 
   canvas.width = width * dpr;
-  canvas.style.width = width + 'px';
   canvas.height = height * dpr;
 
   var ctx = canvas.getContext('2d');
@@ -61,8 +68,9 @@ var renderWallpaper = function(width, height){
       ctx.drawImage(img, padding, (canvas.height-h)/2 - padding, w, h);
     }
 
-    link.href = canvas.toDataURL();
-    link.setAttribute('data-dimensions', width + '×' + height + 'px');
+    var dataURL = canvas.toDataURL();
+    canvasOutput.src = link.href = dataURL;
+    link.setAttribute('data-dimensions', Math.round(width*dpr) + '×' + Math.round(height*dpr) + 'px');
   }
   img.src = '../artwork/thegeekpath.svg';
 }
