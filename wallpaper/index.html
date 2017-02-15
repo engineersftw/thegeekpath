@@ -68,4 +68,7 @@ var renderWallpaper = function(width, height){
 }
 
 renderWallpaper(screen.width, screen.height);
+window.onresize = function(){
+  renderWallpaper(screen.width, screen.height);
+};
 </script>
