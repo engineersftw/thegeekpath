@@ -77,7 +77,8 @@ p.description {
 
 .download {
   font-weight: bold;
-  padding: 1em 4em;
+  padding: 1em;
+  min-width: 50%;
   text-decoration: none;
   display: inline-block;
   margin: 1em auto 0;
