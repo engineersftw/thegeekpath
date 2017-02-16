@@ -46,6 +46,12 @@ h1 {
   word-spacing: 999em; /* Break every word */
 }
 
+@media only screen and (min-width: 700px) {
+  h1 {
+    font-size: 25vh;
+  }
+}
+
 details {
   margin: 1em 0;
 }
@@ -60,11 +66,49 @@ p.description {
   line-height: 1.1em;
 }
 
-.poster{
+#poster{
   max-width: 100%;
   margin: 2em 0 0;
   background: #f9f7e8;
   box-shadow: 0px 5px 20px rgba(0,0,0,.3);
+}
+
+#canvas{
+  visibility: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+#wallpaper-section{
+  display: block;
+  border: 2px solid #000;
+  overflow: auto;
+}
+
+#wallpaper-section p{
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+#wallpaper{
+  max-width: 100%;
+  border-bottom: 2px solid #000;
+}
+
+@media only screen and (min-width: 700px) {
+  #wallpaper{
+    float: left;
+    width: 50%;
+    margin-right: 1em;
+    border-bottom: 0;
+    border-right: 2px solid #000;
+  }
+}
+
+#download-wallpaper:after{
+  content: ' (' attr(data-dimensions) ')';
 }
 
 .text {
@@ -128,10 +172,4 @@ p.description {
 .contributors li {
   display: inline-block;
   margin: .5em 1em .5em .5em;
-}
-
-@media only screen and (min-width: 700px) {
-  h1 {
-    font-size: 25vh;
-  }
 }

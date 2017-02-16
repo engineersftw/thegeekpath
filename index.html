@@ -23,7 +23,7 @@
   <p class="description">a community manifesto</p>
 </header>
 <main>
-  <img width="800" class="poster" src="artwork/thegeekpath.svg" alt="The Geek Path manifesto">
+  <img width="800" id="poster" src="artwork/thegeekpath.svg" alt="The Geek Path manifesto">
   <p>
     <a href="/artwork/thegeekpath.png" class="download" download="the_geek_path">Download manifesto</a>
   </p>
@@ -91,6 +91,13 @@
     </a>
   </p>
 
+  <div id="wallpaper-section">
+    <canvas id="canvas"></canvas>
+    <img id="wallpaper" alt="">
+    <p>This wallpaper is auto-generated based on your current device's screen&nbsp;resolution.</p>
+    <p><a id="download-wallpaper" download="wallpaper" href="#">Download wallpaper</a></p>
+  </div>
+
   <div class="special-block">
     <h2>Codified by the grassroots geek community of engineers, designers and makers from Singapore and beyond.</h2>
 
@@ -153,6 +160,52 @@
     Made with 💞 by geeks, for geeks.
   </p>
 </footer>
+
+<script>
+var renderWallpaper = function(width, height){
+  var dpr = window.devicePixelRatio || 1;
+  var padding = 40;
+
+  var canvas = document.getElementById('canvas');
+  var wallpaper = document.getElementById('wallpaper');
+  var link = document.getElementById('download-wallpaper');
+
+  canvas.width = width * dpr;
+  canvas.height = height * dpr;
+
+  var ctx = canvas.getContext('2d');
+  ctx.fillStyle = '#F9F7E8';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  var img = document.getElementById('poster');
+  img.onload = function() {
+    var max = Math.min(canvas.width, canvas.height);
+    if (canvas.width/canvas.height >= img.width/img.height){
+      var h = canvas.height - padding*2;
+      var w = img.width/img.height*(h);
+      ctx.drawImage(img, (canvas.width-w)/2 - padding, padding, w, h);
+    } else {
+      var w = canvas.width - padding*2;
+      var h = img.height/img.width*(w);
+      ctx.drawImage(img, padding, (canvas.height-h)/2 - padding, w, h);
+    }
+
+    var dataURL = canvas.toDataURL();
+    wallpaper.src = link.href = dataURL;
+    link.setAttribute('data-dimensions', Math.round(width*dpr) + '×' + Math.round(height*dpr) + 'px - ' + Math.round((dataURL.length*3/4)/1000) + 'KB');
+  }
+  if (img.naturalWidth) setTimeout(img.onload, 100);
+}
+
+var screenWidth = screen.width, screenHeight = screen.height;
+renderWallpaper(screenWidth, screenHeight);
+window.onresize = function(){
+  if (screen.width == screenWidth && screen.height == screenHeight) return;
+  screenWidth = screen.width;
+  screenHeight = screen.height
+  renderWallpaper(screenWidth, screenHeight);
+};
+</script>
 
 <script>
   window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
