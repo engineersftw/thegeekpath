@@ -7,7 +7,7 @@
 Formats available:
 
 - [PNG](artwork/thegeekpath.png)
-- [SVG](artwork/thegeekpath.svg) ([unoptimized](artwork/thegeekpath.raw.png) version)
+- [SVG](artwork/thegeekpath.svg) ([unoptimized](artwork/thegeekpath.raw.svg) version, [editable](artwork/thegeekpath.editable.svg) version)
 - [PDF](artwork/thegeekpath.pdf)
 
 ## Color scheme
