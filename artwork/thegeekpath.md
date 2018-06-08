@@ -15,7 +15,7 @@ Experiment.
 
 **Be supportive.**
 Collaborate. Critique heartily. Be kind.  
-Encourage a newcomer.  
+Encourage newcomers.  
 Share our crafts with the community.
 
 **Be dedicated.**  
